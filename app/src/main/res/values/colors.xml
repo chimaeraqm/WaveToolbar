@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F9AC19</color>
+    <color name="colorPrimaryDark">#F9AC19</color>
+    <color name="colorAccent">#212121</color>
+
+
+    <color name="colorBlack">#212121</color>
+    <color name="colorGray">#707070</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#296fc7</color>
+
+    <color name="colorTrans">#00000000</color>
+    <color name="colorTransBlue">#70296fc7</color>
+
+</resources>

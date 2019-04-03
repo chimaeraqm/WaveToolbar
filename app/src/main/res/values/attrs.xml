@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WaveToolbar">
+
+        <attr name="viewBackground" format="reference"/>
+
+        <attr name="title" format="string"/>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="titleColor" format="color"/>
+
+        <attr name="appIcon" format="reference"/>
+        <attr name="appIconShow" format="boolean"/>
+        <attr name="appIconSize" format="dimension"/>
+
+        <attr name="backIcon" format="reference"/>
+        <attr name="backIconSize" format="dimension"/>
+
+        <attr name="menuIcon" format="reference"/>
+        <attr name="menuIconShow" format="boolean"/>
+        <attr name="mentIconSize" format="dimension"/>
+
+        <attr name="backgroundBlur" format="boolean"/>
+        <attr name="backgroundBlurRatio" format="float"/>
+
+        <attr name="wave_Amlitude" format="integer" />
+        <attr name="wave_Speed" format="float" />
+        <attr name="firstWaveColor" format="color" />
+        <attr name="secondWaveColor" format="color" />
+    </declare-styleable>
+
+</resources>
