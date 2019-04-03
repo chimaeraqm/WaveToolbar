@@ -1,4 +1,6 @@
 # WaveToolbar Brief Instruction
+[![](https://jitpack.io/v/chimaeraqm/WaveToolbar.svg)](https://jitpack.io/#chimaeraqm/WaveToolbar)
+
 *Customized toolbar with bottom wave effect. More attactive animations will be added for wider selection.*
 
 ## How to integrate
