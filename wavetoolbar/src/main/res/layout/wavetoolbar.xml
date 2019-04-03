@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/ic_format_list_bulleted_black_32dp"
+        android:background="@drawable/ic_format_list_bulleted_white_32dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="@+id/im_back"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/ic_chevron_left_black_32dp"
+        android:background="@drawable/ic_chevron_left_white_32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

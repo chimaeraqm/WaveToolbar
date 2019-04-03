@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.crazydwarf.chimaeraqm.wavetoolbar", appContext.getPackageName());
+        assertEquals("com.crazydwarf.chimaeraqm.wavetoolbar.test", appContext.getPackageName());
     }
 }
