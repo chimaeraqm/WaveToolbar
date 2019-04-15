@@ -41,15 +41,15 @@ dependencies
 
 `setmAppIconShow(boolean mAppIconShow)`
 
-`setmAppIconSize(int mAppIconSize)`
+`//setmAppIconSize(int mAppIconSize)`
 
 `setmBackIcon(Drawable mBackIcon)`
 
-`setmBackIconSize(int mBackIconSize)`
+`//setmBackIconSize(int mBackIconSize)`
 
 `setmMenuIcon(Drawable mMenuIcon)`
 
-`setmMenuIconSize(int mMenuIconSize)`
+`//setmMenuIconSize(int mMenuIconSize)`
 
 `setmBackgroundBlur(boolean mBackgroundBlur)`
 
