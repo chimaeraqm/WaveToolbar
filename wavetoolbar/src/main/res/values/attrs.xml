@@ -10,14 +10,14 @@
 
         <attr name="appIcon" format="reference"/>
         <attr name="appIconShow" format="boolean"/>
-        <attr name="appIconSize" format="dimension"/>
+        <!--<attr name="appIconSize" format="dimension"/>-->
 
         <attr name="backIcon" format="reference"/>
-        <attr name="backIconSize" format="dimension"/>
+        <!--<attr name="backIconSize" format="dimension"/>-->
 
         <attr name="menuIcon" format="reference"/>
         <attr name="menuIconShow" format="boolean"/>
-        <attr name="mentIconSize" format="dimension"/>
+        <!--<attr name="mentIconSize" format="dimension"/>-->
 
         <attr name="backgroundBlur" format="boolean"/>
         <attr name="backgroundBlurRatio" format="float"/>

@@ -107,14 +107,14 @@ public class WaveToolbar extends Toolbar
 
         mAppIcon = typedArray.getDrawable(R.styleable.WaveToolbar_appIcon);
         mAppIconShow = typedArray.getBoolean(R.styleable.WaveToolbar_appIconShow,true);
-        mAppIconSize = typedArray.getDimensionPixelSize(R.styleable.WaveToolbar_appIconSize,20);
+        //mAppIconSize = typedArray.getDimensionPixelSize(R.styleable.WaveToolbar_appIconSize,20);
 
         mBackIcon = typedArray.getDrawable(R.styleable.WaveToolbar_backIcon);
-        mBackIconSize = typedArray.getDimensionPixelSize(R.styleable.WaveToolbar_backIconSize,20);
+        //mBackIconSize = typedArray.getDimensionPixelSize(R.styleable.WaveToolbar_backIconSize,20);
 
         mMenuIcon = typedArray.getDrawable(R.styleable.WaveToolbar_menuIcon);
         mMenuIconShow = typedArray.getBoolean(R.styleable.WaveToolbar_menuIconShow,true);
-        mMenuIconSize = typedArray.getDimensionPixelSize(R.styleable.WaveToolbar_mentIconSize,20);
+        //mMenuIconSize = typedArray.getDimensionPixelSize(R.styleable.WaveToolbar_mentIconSize,20);
 
         mBackgroundBlur = typedArray.getBoolean(R.styleable.WaveToolbar_backgroundBlur,false);
         mBackgroundBlurRatio = typedArray.getFloat(R.styleable.WaveToolbar_backgroundBlurRatio,0f);
@@ -146,10 +146,10 @@ public class WaveToolbar extends Toolbar
         {
             mImageView_AppIcon.setVisibility(VISIBLE);
             mImageView_AppIcon.setBackground(mAppIcon);
-            ViewGroup.LayoutParams layoutParams = mImageView_AppIcon.getLayoutParams();
+            /*ViewGroup.LayoutParams layoutParams = mImageView_AppIcon.getLayoutParams();
             layoutParams.height = mAppIconSize;
             layoutParams.width = mAppIconSize;
-            mImageView_AppIcon.setLayoutParams(layoutParams);
+            mImageView_AppIcon.setLayoutParams(layoutParams);*/
             mImageView_AppIcon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -164,10 +164,12 @@ public class WaveToolbar extends Toolbar
 
         mImageView_BackIcon = findViewById(R.id.im_back);
         mImageView_BackIcon.setBackground(mBackIcon);
+/*
         ViewGroup.LayoutParams backicon_layoutParams = mImageView_BackIcon.getLayoutParams();
         backicon_layoutParams.height = mBackIconSize;
         backicon_layoutParams.width = mBackIconSize;
         mImageView_BackIcon.setLayoutParams(backicon_layoutParams);
+*/
         mImageView_BackIcon.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,10 +182,12 @@ public class WaveToolbar extends Toolbar
         {
             mImageView_MenuIcon.setVisibility(VISIBLE);
             mImageView_MenuIcon.setBackground(mMenuIcon);
+/*
             ViewGroup.LayoutParams menuicon_layoutParams = mImageView_MenuIcon.getLayoutParams();
             menuicon_layoutParams.height = mMenuIconSize;
             menuicon_layoutParams.width = mMenuIconSize;
             mImageView_MenuIcon.setLayoutParams(menuicon_layoutParams);
+*/
             mImageView_MenuIcon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -337,25 +341,29 @@ public class WaveToolbar extends Toolbar
         this.mAppIconShow = mAppIconShow;
     }
 
+/*
     public void setmAppIconSize(int mAppIconSize) {
         this.mAppIconSize = mAppIconSize;
     }
+*/
 
     public void setmBackIcon(Drawable mBackIcon) {
         this.mBackIcon = mBackIcon;
     }
 
-    public void setmBackIconSize(int mBackIconSize) {
+    /*public void setmBackIconSize(int mBackIconSize) {
         this.mBackIconSize = mBackIconSize;
-    }
+    }*/
 
     public void setmMenuIcon(Drawable mMenuIcon) {
         this.mMenuIcon = mMenuIcon;
     }
 
+/*
     public void setmMenuIconSize(int mMenuIconSize) {
         this.mMenuIconSize = mMenuIconSize;
     }
+*/
 
     public void setmBackgroundBlur(boolean mBackgroundBlur) {
         this.mBackgroundBlur = mBackgroundBlur;

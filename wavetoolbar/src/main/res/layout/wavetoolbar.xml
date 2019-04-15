@@ -9,23 +9,23 @@
 
     <ImageView
         android:id="@+id/im_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/im_back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/im_back"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/im_back" />
 
     <ImageView
         android:id="@+id/im_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/ic_chevron_left_white_32dp"
+        android:background="@color/colorPrimary"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +48,8 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:background="@color/colorAccent"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/im_back"
         app:layout_constraintStart_toEndOf="@+id/tv_title"
         app:layout_constraintTop_toTopOf="@+id/im_back"/>
