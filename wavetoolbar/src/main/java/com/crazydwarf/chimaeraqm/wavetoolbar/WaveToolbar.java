@@ -315,30 +315,38 @@ public class WaveToolbar extends Toolbar
 
     public void setmBackground(Drawable mBackground) {
         this.mBackground = mBackground;
+        initView();
     }
 
     public void setmTextView_Title(TextView mTextView_Title) {
         this.mTextView_Title = mTextView_Title;
+        initView();
     }
 
     public void setmTitle(String mTitle) {
         this.mTitle = mTitle;
+        initView();
     }
 
     public void setmTitleSize(int mTitleSize) {
         this.mTitleSize = mTitleSize;
+        initView();
     }
 
     public void setmTitleColor(int mTitleColor) {
         this.mTitleColor = mTitleColor;
+        initView();
+//        invalidate();
     }
 
     public void setmAppIcon(Drawable mAppIcon) {
         this.mAppIcon = mAppIcon;
+        initView();
     }
 
     public void setmAppIconShow(boolean mAppIconShow) {
         this.mAppIconShow = mAppIconShow;
+        initView();
     }
 
 /*
@@ -349,6 +357,7 @@ public class WaveToolbar extends Toolbar
 
     public void setmBackIcon(Drawable mBackIcon) {
         this.mBackIcon = mBackIcon;
+        initView();
     }
 
     /*public void setmBackIconSize(int mBackIconSize) {
@@ -357,6 +366,7 @@ public class WaveToolbar extends Toolbar
 
     public void setmMenuIcon(Drawable mMenuIcon) {
         this.mMenuIcon = mMenuIcon;
+        initView();
     }
 
 /*
@@ -367,10 +377,12 @@ public class WaveToolbar extends Toolbar
 
     public void setmBackgroundBlur(boolean mBackgroundBlur) {
         this.mBackgroundBlur = mBackgroundBlur;
+        initView();
     }
 
     public void setmBackgroundBlurRatio(float mBackgroundBlurRatio) {
         this.mBackgroundBlurRatio = mBackgroundBlurRatio;
+        initView();
     }
 
     /**

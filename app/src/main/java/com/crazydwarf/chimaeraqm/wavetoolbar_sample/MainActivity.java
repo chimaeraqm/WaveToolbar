@@ -1,10 +1,12 @@
 package com.crazydwarf.chimaeraqm.wavetoolbar_sample;
 
 import android.app.ActivityManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.crazydwarf.chimaeraqm.wavetoolbar.WaveToolbar;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WaveToolbar toolBar = findViewById(R.id.top_menu);
+        final WaveToolbar toolBar = findViewById(R.id.top_menu);
         setSupportActionBar(toolBar);
         toolBar.setMenuIconClickListener(new WaveToolbar.MenuIconClickListener() {
             @Override
@@ -36,6 +38,14 @@ public class MainActivity extends AppCompatActivity
             public void OnClick() {
                 //Make two continuous click to exit the programme
                 activityExit();
+            }
+        });
+
+        Button bn = findViewById(R.id.bn_change);
+        bn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toolBar.setmTitleColor(Color.RED);
             }
         });
     }
