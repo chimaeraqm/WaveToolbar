@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.crazydwarf.chimaeraqm.wavetoolbar.WaveToolbar;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -45,7 +47,11 @@ public class MainActivity extends AppCompatActivity
         bn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toolBar.setmTitleColor(Color.RED);
+                String ranColor = getRandomColorCode();
+                int firstColor = Color.parseColor('#'+ranColor);
+                toolBar.setFirstWaveColor(firstColor);
+                int secondColor = Color.parseColor('#'+"60"+ranColor);
+                toolBar.setSecondWaveColor(secondColor);
             }
         });
     }
@@ -58,5 +64,19 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "Made two continuous click to exit the programme", Toast.LENGTH_SHORT).show();
             finish();
         }
+    }
+
+    public static String getRandomColorCode()
+    {
+        String r,g,b;
+        Random random = new Random();
+        r = Integer.toHexString(random.nextInt(256)).toUpperCase();
+        g = Integer.toHexString(random.nextInt(256)).toUpperCase();
+        b = Integer.toHexString(random.nextInt(256)).toUpperCase();
+        r = r.length()==1 ? "0" + r : r ;
+        g = g.length()==1 ? "0" + g : g ;
+        b = b.length()==1 ? "0" + b : b ;
+        String colorStr = r+g+b;
+        return colorStr;
     }
 }

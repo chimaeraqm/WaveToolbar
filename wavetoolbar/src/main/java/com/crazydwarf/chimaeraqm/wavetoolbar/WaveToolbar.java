@@ -86,6 +86,11 @@ public class WaveToolbar extends Toolbar
     private boolean mLoop = true;
     private static final int MESSAGE_START_WAVE = 2001;
 
+    /**
+     * control wave animation on/off
+     */
+    private boolean mAnimationOn = true;
+
     public WaveToolbar(Context context) {
         this(context,null);
     }
@@ -124,6 +129,8 @@ public class WaveToolbar extends Toolbar
 
         firstWaveColor = typedArray.getColor(R.styleable.WaveToolbar_firstWaveColor, ContextCompat.getColor(mContext, R.color.colorBlue));
         secondWaveColor = typedArray.getColor(R.styleable.WaveToolbar_secondWaveColor, ContextCompat.getColor(mContext, R.color.colorTransBlue));
+
+        mAnimationOn = typedArray.getBoolean(R.styleable.WaveToolbar_animationOn,true);
 
         typedArray.recycle();
         initView();
@@ -205,9 +212,12 @@ public class WaveToolbar extends Toolbar
 
         wave_Angle = 0;
 
-        WaveToolbarThread = new WaveToolbarThread();
-        WaveToolbarHandler = new WaveToolbarHandler();
-        WaveToolbarThread.start();
+        if(mAnimationOn == true)
+        {
+            WaveToolbarThread = new WaveToolbarThread();
+            WaveToolbarHandler = new WaveToolbarHandler();
+            WaveToolbarThread.start();
+        }
     }
 
     private void paintSetup()
@@ -227,33 +237,42 @@ public class WaveToolbar extends Toolbar
         mBackIconbgPaint.setAntiAlias(true);
         mBackIconbgPaint.setColor(Color.WHITE);
 
-        backgroundPaint = new Paint();
-        backgroundPaint.setAntiAlias(true);
+        if(backgroundPaint == null)
+        {
+            backgroundPaint = new Paint();
+            backgroundPaint.setAntiAlias(true);
+        }
 
-        firstWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        firstWavePaint.setAntiAlias(true);
-        firstWavePaint.setFlags(Paint.ANTI_ALIAS_FLAG);
+        if(firstWavePaint == null)
+        {
+            firstWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            firstWavePaint.setAntiAlias(true);
+            firstWavePaint.setFlags(Paint.ANTI_ALIAS_FLAG);
+            firstWavePaint.setStyle(Paint.Style.FILL);
+        }
         firstWavePaint.setColor(firstWaveColor);
-        firstWavePaint.setStyle(Paint.Style.FILL);
-        firstWavePaint.setStrokeWidth(10);
 
-        secondWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        secondWavePaint.setAntiAlias(true);
-        secondWavePaint.setFlags(Paint.ANTI_ALIAS_FLAG);
-        secondWavePaint.setStyle(Paint.Style.FILL);
+        if(secondWavePaint == null)
+        {
+            secondWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            secondWavePaint.setAntiAlias(true);
+            secondWavePaint.setFlags(Paint.ANTI_ALIAS_FLAG);
+            secondWavePaint.setStyle(Paint.Style.FILL);
+        }
         secondWavePaint.setColor(secondWaveColor);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+
+        mWave_Width = getWidth();
+        mWave_Height = getHeight();
         Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
         bitmapCanvas = new Canvas(bitmap);
         bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         backgroundPaint.setShader(bitmapShader);
 
-        mWave_Width = getWidth();
-        mWave_Height = getHeight();
     }
 
     @Override
@@ -286,8 +305,8 @@ public class WaveToolbar extends Toolbar
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         bitmapCanvas.drawPaint(paint);
 
-        bitmapCanvas.drawPath(firstPath, firstWavePaint);
         bitmapCanvas.drawPath(secondPath, secondWavePaint);
+        bitmapCanvas.drawPath(firstPath, firstWavePaint);
         canvas.drawRect(0,0,getWidth(),getHeight(),backgroundPaint);
     }
 
@@ -418,6 +437,18 @@ public class WaveToolbar extends Toolbar
 
     public void setWave_Angle(float wave_Angle) {
         this.wave_Angle = wave_Angle;
+        invalidate();
+    }
+
+    public void setFirstWaveColor(int firstWaveColor) {
+        this.firstWaveColor = firstWaveColor;
+        paintSetup();
+        invalidate();
+    }
+
+    public void setSecondWaveColor(int secondWaveColor) {
+        this.secondWaveColor = secondWaveColor;
+        paintSetup();
         invalidate();
     }
 

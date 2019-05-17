@@ -22,7 +22,8 @@
         app:titleSize="20sp"
         app:viewBackground="@color/colorTrans"
         app:wave_Amlitude="20"
-        app:wave_Speed="0.02" />
+        app:wave_Speed="0.02"
+        app:animationOn="false"/>
 
     <Button
         android:id="@+id/bn_change"
